@@ -1,0 +1,36 @@
+site_name: Team Notes
+site_description: 팀 공부/연구 아카이브
+site_url: https://mindu2.github.io
+repo_url: https://github.com/mindu2/mindu2.github.io
+repo_name: mindu2/mindu2.github.io
+
+theme:
+  name: material
+  language: ko
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.tracking
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search
+  - glightbox
+  - git-revision-date-localized:
+      type: date
+  - mermaid2
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+
+nav:
+  - 홈: index.md
+  - TIL: til/index.md
+  - Papers: papers/index.md
+  - Projects: projects/index.md
