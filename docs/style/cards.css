@@ -1,4 +1,4 @@
-.md-typeset .post-cards {
+.post-cards {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -6,11 +6,11 @@
   gap: 0.8rem;
 }
 
-.md-typeset .post-card {
+.post-card {
   display: flex;
   gap: 1rem;
   align-items: stretch;
-  text-decoration: none;
+  text-decoration: none !important;
   border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: 0.6rem;
   padding: 0.8rem;
@@ -18,14 +18,15 @@
   transition: box-shadow .15s ease, transform .05s ease, border-color .15s ease;
 }
 
-.md-typeset .post-card:hover {
+.post-card:hover {
   box-shadow: var(--md-shadow-z2);
   transform: translateY(-1px);
   border-color: var(--md-primary-fg-color--light);
 }
 
-.md-typeset .post-card .thumb {
-  width: 160px;
+/* 썸네일 */
+.post-card .thumb {
+  width: 160px;      /* 필요시 140~200px */
   height: 110px;
   object-fit: cover;
   border-radius: 0.4rem;
@@ -33,36 +34,38 @@
   background: var(--md-code-bg-color);
 }
 
-.md-typeset .post-card .meta {
+/* 텍스트 영역 */
+.post-card .meta {
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-width: 0;
 }
 
-.md-typeset .post-card .title {
+.post-card .title {
   margin: 0 0 .25rem 0;
   font-size: 1.02rem;
   line-height: 1.35;
   color: var(--md-primary-fg-color);
 }
 
-.md-typeset .post-card .desc {
+.post-card .desc {
   margin: 0 0 .25rem 0;
   color: var(--md-default-fg-color--light);
 }
 
-.md-typeset .post-card .sub {
+.post-card .sub {
   margin: 0;
   font-size: .86rem;
   color: var(--md-default-fg-color--lighter);
 }
 
+/* 모바일에서는 세로 스택 */
 @media (max-width: 700px) {
-  .md-typeset .post-card {
+  .post-card {
     flex-direction: column;
   }
-  .md-typeset .post-card .thumb {
+  .post-card .thumb {
     width: 100%;
     height: 160px;
   }

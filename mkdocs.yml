@@ -4,6 +4,7 @@ site_url: https://mindu2.github.io
 repo_url: https://github.com/mindu2/mindu2.github.io
 repo_name: mindu2/mindu2.github.io
 edit_uri: edit/main/docs/
+use_directory_urls: true
 
 theme:
   name: material
