@@ -17,7 +17,11 @@ theme:
     - content.code.copy
     - search.suggest
     - search.highlight
+  font:
+    text: Noto Sans KR
+    code: Fira Code
 
+    
 plugins:
   - search
   - glightbox
@@ -32,18 +36,20 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.tabbed
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - toc:
       permalink: true
   - pymdownx.arithmatex:
       generic: true
 
-# KaTeX 및 수식 렌더링용 스크립트
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js
   - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js
-  - js/math.js
+  - style/math.js
+  - style/custom.js
 
-# 카드 스타일 및 KaTeX CSS
 extra_css:
   - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
   - style/cards.css
