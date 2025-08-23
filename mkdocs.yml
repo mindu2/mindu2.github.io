@@ -1,5 +1,5 @@
-site_name: Team Notes
-site_description: 팀 공부/연구 아카이브
+site_name: LLM Tech Blog
+site_description: 
 site_url: https://mindu2.github.io
 repo_url: https://github.com/mindu2/mindu2.github.io
 repo_name: mindu2/mindu2.github.io
@@ -30,7 +30,4 @@ markdown_extensions:
       permalink: true
 
 nav:
-  - 홈: index.md
-  - TIL: til/index.md
-  - Papers: papers/index.md
-  - Projects: projects/index.md
+  - HOME: index.md

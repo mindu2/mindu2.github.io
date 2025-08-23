@@ -1,4 +1,4 @@
-# 팀 노트 📚
-- TIL / Papers / Projects로 정리합니다.
-- 수정 제안은 PR로 부탁드려요.
+# Paper Reviews 📚
 
+
+## [Signal and Noise: A Framework for Reducing Uncertainty in Language Model Evaluation](2025-08-23-signal_and_noise.md)
