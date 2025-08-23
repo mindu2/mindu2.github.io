@@ -7,3 +7,9 @@ authors: [mjkmain]
 
 
 # TEST
+
+- LaTeX test
+
+$$ \alpha \times \beta $$
+
+This is test $ \alpha \times \beta$ !!

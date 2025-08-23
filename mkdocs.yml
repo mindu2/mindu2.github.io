@@ -42,9 +42,8 @@ extra_javascript:
 
 extra_css:
   - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
+  - style/cards.css
 
 
 nav:
   - HOME: index.md
-  - Paper Reviews:
-      - "2025-08-23 · Signal and Noise": 2025-08-23-signal_and_noise.md
