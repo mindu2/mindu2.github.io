@@ -8,7 +8,8 @@
 
 .post-card {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.6rem;
   align-items: stretch;
   text-decoration: none !important;
   border: 1px solid var(--md-default-fg-color--lightest);
@@ -18,6 +19,18 @@
   transition: box-shadow .15s ease, transform .05s ease, border-color .15s ease;
 }
 
+
+.md-typeset ul.post-cards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.md-typeset ul.post-cards > li {
+  margin: 0;
+  padding: 0;
+}
+
+
 .post-card:hover {
   box-shadow: var(--md-shadow-z2);
   transform: translateY(-1px);
@@ -25,8 +38,8 @@
 }
 
 .post-card .thumb {
-  width: 160px;
-  height: 110px;
+  width: 100%;
+  height: 160px;
   object-fit: cover;
   border-radius: 0.4rem;
   flex: 0 0 auto;
