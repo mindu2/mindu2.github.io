@@ -16,6 +16,7 @@
   padding: 0.8rem;
   background: var(--md-default-bg-color);
   transition: box-shadow .15s ease, transform .05s ease, border-color .15s ease;
+  overflow: hidden;
 }
 
 .post-card:hover {
@@ -24,9 +25,8 @@
   border-color: var(--md-primary-fg-color--light);
 }
 
-/* 썸네일 */
 .post-card .thumb {
-  width: 160px;      /* 필요시 140~200px */
+  width: 160px;
   height: 110px;
   object-fit: cover;
   border-radius: 0.4rem;
@@ -34,7 +34,6 @@
   background: var(--md-code-bg-color);
 }
 
-/* 텍스트 영역 */
 .post-card .meta {
   display: flex;
   flex-direction: column;
@@ -60,7 +59,14 @@
   color: var(--md-default-fg-color--lighter);
 }
 
-/* 모바일에서는 세로 스택 */
+.md-typeset .post-cards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.md-typeset .post-cards > li { margin: 0; }
+
+
 @media (max-width: 700px) {
   .post-card {
     flex-direction: column;
