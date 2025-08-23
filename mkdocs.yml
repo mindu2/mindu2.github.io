@@ -6,6 +6,7 @@ repo_name: mindu2/mindu2.github.io
 edit_uri: edit/main/docs/
 use_directory_urls: true
 
+
 theme:
   name: material
   language: ko
@@ -36,15 +37,17 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 
+# KaTeX 및 수식 렌더링용 스크립트
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js
   - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js
-  - docs/js/math.js
+  - js/math.js
 
+# 카드 스타일 및 KaTeX CSS
 extra_css:
   - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
-  - docs/style/cards.css
-
+  - style/cards.css
 
 nav:
   - HOME: index.md
+

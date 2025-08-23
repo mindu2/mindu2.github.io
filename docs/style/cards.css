@@ -58,14 +58,6 @@
   color: var(--md-default-fg-color--lighter);
 }
 
-/* .md-typeset .post-cards {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.md-typeset .post-cards > li { margin: 0; } */
-
-
 @media (max-width: 700px) {
   .post-card {
     flex-direction: column;
