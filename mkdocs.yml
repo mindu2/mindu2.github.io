@@ -3,6 +3,7 @@ site_description:
 site_url: https://mindu2.github.io
 repo_url: https://github.com/mindu2/mindu2.github.io
 repo_name: mindu2/mindu2.github.io
+edit_uri: edit/main/docs/
 
 theme:
   name: material
@@ -26,8 +27,24 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed
   - toc:
       permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js
+  - js/math.js
+
+extra_css:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
+
 
 nav:
   - HOME: index.md
+  - Paper Reviews:
+      - "2025-08-23 · Signal and Noise": 2025-08-23-signal_and_noise.md
