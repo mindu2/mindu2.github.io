@@ -127,3 +127,16 @@ figure figcaption {
 .md-typeset h2 {
   font-weight: 500;
 }
+
+:root {
+  --md-typeset-a-color: #4a90e2;
+}
+
+.md-typeset a:hover {
+  color: #8b5cf6;
+  text-decoration: underline;
+}
+
+.md-typeset a:visited {
+  color: #4a90e2;
+}
