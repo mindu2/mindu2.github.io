@@ -2,3 +2,4 @@ nav:
   - Home: index.md
   - CS336:
       - 개요: cs336/index.md
+      - 9월24일 : 09_24.md
