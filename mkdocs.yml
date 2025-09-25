@@ -59,4 +59,7 @@ nav:
   - CS336:
       - 개요: cs336/index.md 
       - 9월 24일: cs336/09_24.md
+  - LLM-Synthetic-Data:
+      - 개요: LLM-Synthetic-Data/index.md
+
 
