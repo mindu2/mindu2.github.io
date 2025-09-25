@@ -56,4 +56,6 @@ extra_css:
 
 nav:
   - HOME: index.md
-
+  - CS336:
+      - 개요: cs336/cs336/index.md
+      - 9월 24일: cs336/09_24.md
