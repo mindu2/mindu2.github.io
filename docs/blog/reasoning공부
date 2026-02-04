@@ -51,19 +51,19 @@ GSM8K, MATH, Lila-OOD, Chinese K-12 mathematical 을 이용해 776k 수학 데�
 3가지 유형으로 구축 COT(사고과정이 글로 적힌 데이터), POT(사고과정에 수식적인 계산이 적힌 데이터), Tool(COT, POT혼합)
 여기까지 해서 이미 잘했다고 함
 
-![image.png](attachment:69e4cbef-b33f-4cbc-852e-7104bb3ec618:image.png)
+![image.png](https://mindu2.github.io/blog/reasoning공부/deepseekmath_eval.png)
 
 그림은 마지막 두줄 보면 됨
 PPO
 
-![image.png](attachment:6cfde2de-f7e6-40a4-8e25-34e741b9ee1f:image.png)
+![image.png](https://mindu2.github.io/blog/reasoning공부/deepseekmath_ppo.png)
 
 cf) 보상모델의 경우 데이터 Rank에 따른 점수 간격을 최대화하게 학습 됨 따라서 특정 기준을 가진 분포가 아니며 출력 값이 실수이다. 따라서 정규화 한 값 A를 사용한다 ㅡ A는 (보상 - 보상예측값) 이다, 앞서 학습 완료된 보상 모델이 있다. 이것을 두 번 사용한다. 하나는 파라미터를 고정해서 스코어를 측정 하는 용도, 하나는 LLM을 PPO하면서 같이 학습 되어 보상 기댓값을 예측 하는 용도, 여기서 학습되는 Reward Model을 Value function이라 하며 보상 예측 값은 Value Function의 Output이다. Value funtion은 회귀로 (실제보상- 예측값)^2으로 학습되 단순히 이 시점에서 이 보상이 끝까지 갈 경우 최종 보상 값을 예측한다. 그러면 매시점 모델이 지금 생성이 괜찮은지를 판단할 수 있다. 이렇게 설계된 이유는 reward 모델은 샘플 단위로 학습해 한 샘플에 대한 score를 출력하기 때문이다. 그 결과로  문장 내 모든 토큰 들은 모두 같은 보상 R을 가지게 된다. 이 부분은 학습 시 샘플이 주어진 순간 상수 R값을 가진다고 이해하면 된다. 하지만 PPO는 토큰 단위의 업데이트를 설계한다. 토큰 단위의 업데이트를 위해 중간 토큰들에 대한 값 V가 필요하고 이를 위해 Value Function으로 (지금까지 이런 토큰들이 나왔을때 이 뒤로 끝까지 생성하면 평균적으로 받을 최종)보상을 출력한다. 그리고 A=R-V를 구해 업데이트를 진행한다.
 질문 분포 P 중 하나인 Query에 대해서 생성한 답변에 대해 A를 계산, 
 A는 (보상 - BaseLine)값으로 모델이 토큰을 출력하는 순간 정해지며 정규화된 보상
 또한 위 식은 기존 PPO에서  KL제한이 빠진 것 처럼 보이나
 
-![image.png](attachment:b34c2a82-03ba-4759-9485-e8efc0367f6d:image.png)
+![image.png](https://mindu2.github.io/blog/reasoning공부/kl_divergency.png)
 
 항을 곱해서 역할을 대신 함,  
 clip을 적용한 것과 비교해 작은 값을 선택 및 gradient 업데이트를 진행
@@ -74,7 +74,7 @@ GRPO는 여기서 A(실제 보상 - 예측 보상 기댓값)정규화 방식을 
 
 GRPO
 
-![image.png](attachment:7fdecdb7-04b5-4166-8d59-19a5ca810669:image.png)
+![image.png](https://mindu2.github.io/blog/reasoning공부/deepseekmath_grpo.png)
 
 =================================================================
 
@@ -91,13 +91,13 @@ RL 33K
 
 보상모델  오브젝트 함수 
 
-![image.png](attachment:4a114489-965a-478a-924a-3d950421d23a:image.png)
+![image.png](https://mindu2.github.io/blog/reasoning공부/ppo_loss.png)
 
 x라는 프롬프트에 대해 yw와 yl을 출력하는 분포에 대해서 보상모델이 내놓은 yw의 점수와 yl점수간의 차이가 커지도록 학습
 
 PPO-ptx 오브젝트 함수(ptx는 모델의 로스를 의미), 참고 PPO는 토큰단위 계산
 
-![image.png](attachment:1a5765fe-3e4a-4c0e-b47c-f830a4fec640:image.png)
+![image.png](https://mindu2.github.io/blog/reasoning공부/ppo_object.png)
 
 x에 대해 y를 output으로 출력하는 현재 학습대상인 LLM에 대해
 1.  보상모델이 측정한 점수(실제로는 socre 정규화 값으로 r세타가 아닌 A를 사용)
@@ -132,7 +132,8 @@ temperature 1
 
 reward 는 <think></think><answer></answer> 포멧에 대한 점수 + 정답여부
 
-![image.png](attachment:1b68b8a2-54b5-431c-a2d5-7ef86fb84ac5:image.png)
+![image.png](https://mindu2.github.io/blog/reasoning공부/deepseekrl_outline.png)
+
 
 그림하고 본문 적힌 내용이 조금 다름, 본문 내용을 아래 정리함
 
