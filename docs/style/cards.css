@@ -109,7 +109,7 @@ figure figcaption {
   }
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   .md-typeset h1, .md-typeset h2, .md-typeset h3,
   .md-typeset h4, .md-typeset h5, .md-typeset h6 {
     color: #000000;
