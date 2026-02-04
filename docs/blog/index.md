@@ -5,7 +5,6 @@
 Training language models to follow instructions with human feedback(PPO) → DeepSeekMath → DeepSeek R1 → TRL → 보상 실험 → 서베이 Reinforcement Learning from Human Feedback
 A short introduction to RLHF and post-training focused on language models → 학습 방식 실험
 
-=================================================================
 
 ### 사전지식
 
