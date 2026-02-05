@@ -1,15 +1,38 @@
 site_name: LLM Tech Blog
-site_description: 
+site_description: "AI 및 LLM 연구 기록을 담는 블로그"
 site_url: https://mindu2.github.io
 repo_url: https://github.com/mindu2/mindu2.github.io
 repo_name: mindu2/mindu2.github.io
 edit_uri: edit/main/docs/
 use_directory_urls: true
 
-
 theme:
   name: material
   language: ko
+  # 다크/라이트 모드 자동 전환 설정 추가
+  palette:
+    # 1. 시스템 설정에 따라 자동 전환
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: 시스템 설정에 맞춤
+    # 2. 라이트 모드 (기본)
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 다크 모드로 전환
+    # 3. 다크 모드 (배경색 해결 핵심)
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 라이트 모드로 전환
+  
   features:
     - navigation.tabs
     - navigation.instant
@@ -21,7 +44,6 @@ theme:
     text: Noto Sans KR
     code: Fira Code
 
-    
 plugins:
   - search
   - glightbox
@@ -33,9 +55,13 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-  - pymdownx.highlight
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -63,5 +89,3 @@ nav:
       - 개요: LLM-Synthetic-Data/index.md
   - blog:
       - 개요: blog/index.md
-
-
