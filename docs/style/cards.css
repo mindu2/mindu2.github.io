@@ -1,3 +1,48 @@
+/* 1. 기본 테마 및 변수 설정 */
+:root {
+  --md-typeset-a-color: #4a90e2;
+}
+
+.md-typeset h1,
+.md-typeset h2 {
+  font-weight: 500;
+}
+
+.md-typeset a:hover {
+  color: #8b5cf6;
+  text-decoration: underline;
+}
+
+.md-typeset a:visited {
+  color: #4a90e2;
+}
+
+/* 2. 다크 모드 설정 (중복 및 블랙 컬러 버그 수정) */
+@media (prefers-color-scheme: dark) {
+  .md-typeset h1, .md-typeset h2, .md-typeset h3,
+  .md-typeset h4, .md-typeset h5, .md-typeset h6 {
+    color: #ffffff;
+  }
+  
+  /* 목차(TOC) 글자색이 배경에 묻히지 않도록 강제 지정 */
+  .md-nav__link {
+    color: var(--md-default-fg-color);
+  }
+}
+
+/* 3. 목차(TOC) 및 내비게이션 스타일 강화 */
+.md-sidebar--secondary .md-nav__link {
+  display: block;
+  transition: color .25s;
+}
+
+/* 현재 읽고 있는 목차 강조 */
+.md-nav__link--active {
+  color: var(--md-primary-fg-color) !important;
+  font-weight: 700;
+}
+
+/* 4. 블로그 포스트 카드 레이아웃 */
 .post-cards {
   list-style: none;
   padding: 0;
@@ -19,17 +64,16 @@
   transition: box-shadow .15s ease, transform .05s ease, border-color .15s ease;
 }
 
-
 .md-typeset ul.post-cards {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 .md-typeset ul.post-cards > li {
   margin: 0;
   padding: 0;
 }
-
 
 .post-card:hover {
   box-shadow: var(--md-shadow-z2);
@@ -37,6 +81,7 @@
   border-color: var(--md-primary-fg-color--light);
 }
 
+/* 카드 이미지 설정 */
 .post-card .thumb {
   width: 100%;
   height: 180px;
@@ -71,6 +116,7 @@
   color: var(--md-default-fg-color--lighter);
 }
 
+/* 5. 포스트 메타 정보 (날짜, 태그 등) */
 .post-meta {
   margin-top: 2rem;
   display: flex;
@@ -79,6 +125,7 @@
   font-size: .9rem;
   color: var(--md-default-fg-color--light);
 }
+
 .post-meta__item {
   padding: .2rem .5rem;
   border: 1px solid var(--md-default-fg-color--lightest);
@@ -86,19 +133,23 @@
   background: var(--md-default-bg-color);
 }
 
+/* 6. 이미지 및 캡션 */
 figure {
   text-align: center;
   margin: 1.2em auto;
 }
+
 figure img {
   max-width: 100%;
 }
+
 figure figcaption {
   font-size: 0.8rem;
   color: var(--md-default-fg-color);
   margin-top: 0.4em;
 }
 
+/* 7. 반응형 디자인 (모바일) */
 @media (max-width: 700px) {
   .post-card {
     flex-direction: column;
@@ -107,36 +158,4 @@ figure figcaption {
     width: 100%;
     height: 160px;
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  .md-typeset h1, .md-typeset h2, .md-typeset h3,
-  .md-typeset h4, .md-typeset h5, .md-typeset h6 {
-    color: #000000;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .md-typeset h1, .md-typeset h2, .md-typeset h3,
-  .md-typeset h4, .md-typeset h5, .md-typeset h6 {
-    color: #ffffff;
-  }
-}
-
-.md-typeset h1,
-.md-typeset h2 {
-  font-weight: 500;
-}
-
-:root {
-  --md-typeset-a-color: #4a90e2;
-}
-
-.md-typeset a:hover {
-  color: #8b5cf6;
-  text-decoration: underline;
-}
-
-.md-typeset a:visited {
-  color: #4a90e2;
 }
