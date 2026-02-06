@@ -88,4 +88,8 @@ nav:
   - LLM-Synthetic-Data:
       - 개요: LLM-Synthetic-Data/index.md
   - blog:
-      - 개요: blog/index.md
+      - 개요: "blog/전체 개요.md"
+      - "DeepSeek-R1": "blog/DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning.md"
+      - "DeepSeekMath(GRPO 제안)": "blog/DeepSeekMath: Pushing the Limits of Mathematical.md"
+      - "RL할때 BF16대신 FP16 쓰면 좋다": "blog/Defeating the Training-Inference Mismatch via FP16.md"
+      - "PPO를 LLM에 적용": "blog/Training language models to follow instructions.md"
