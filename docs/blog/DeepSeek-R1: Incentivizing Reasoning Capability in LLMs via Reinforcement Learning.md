@@ -1,10 +1,6 @@
-<img width="2202" height="1134" alt="image" src="https://github.com/user-attachments/assets/41d589f3-db0c-441a-b171-943c6268378c" />### DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning
+### DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning
 
 
-
-
-
-<img width="2192" height="545" alt="image" src="https://github.com/user-attachments/assets/07fca35b-7427-4c17-a224-d5b048a0af19" />
 
 Test Time Scale을 조절하는 방법으로 GRPO에서 Value function을 없앴다면 이번엔 Rule기반 보상으로 보상모델도 필요 없음
 
@@ -39,7 +35,7 @@ Reward(Reasoning) 하고나서 일반 Instruction 데이터(General) + Preferenc
 
 <img width="2202" height="1134" alt="image" src="https://github.com/user-attachments/assets/19f76948-7c02-44ca-ad22-28dc4a997157" />
 
-![Uploading image.png…]()
+<img width="2282" height="1241" alt="image" src="https://github.com/user-attachments/assets/b007f335-7778-45be-b23c-4790bb469073" />
 
 
 실험해볼 내용 :</think>앞에 한국어만 생성시 보상을 주도록하면, 추론시 한국어만 사용해서 think를 생성하게 할 수 있을 것 같음.
