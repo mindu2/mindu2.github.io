@@ -1,0 +1,36 @@
+uv 사용해서 프로젝트를 관리
+
+
+mkdir hello-world
+cd hello-world
+uv init
+하면
+
+├── .gitignore
+├── README.md
+├── main.py
+└── pyproject.toml
+├── .venv
+│   ├── bin
+│   ├── lib
+│   └── pyvenv.cfg
+├── .python-version : 을 보고 uv가 python 환경을 결정한다.
+└── uv.lock
+
+===========================================
+[project]
+name = "hello-world"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+dependencies = []
+
+pyproject.toml은 프로젝트에 대한 메타데이터를 기록한다.
+=======================================
+uv add
+uv remove
+명령어를 통해 .toml과 패키지를 관리할 수 있다.
+==========================================
+
+현재 가상환경과 상관없이
+uv run main.py 으로 실행가능 
